@@ -8,21 +8,37 @@ from components import render_card, create_card_modal
 
 COLORS = ["green", "light_green", "purple", "lilac", "red", "brown", "blue", "yellow", "gray"]
 
-@st.dialog("Sobre o Port.Ico")
+@st.dialog("Sobre o Port.Ico", width="large")
 def about_modal():
-    st.markdown("<h2 style='text-align: center;'>📅 Port.Ico</h2>", unsafe_allow_html=True)
-    st.write("**Desenvolvedora:** Thais Lopes")
+    tab_about, tab_changelog = st.tabs(["Sobre", "Change Log"])
     
-    try:
-        last_commit_date = subprocess.check_output(['git', 'log', '-1', '--format=%cd']).decode('utf-8').strip()
-        last_commit_hash = subprocess.check_output(['git', 'log', '-1', '--format=%h']).decode('utf-8').strip()
-    except Exception:
-        last_commit_date = "N/A"
-        last_commit_hash = "N/A"
+    with tab_about:
+        st.markdown("<h2 style='text-align: center;'>📅 Port.Ico</h2>", unsafe_allow_html=True)
+        st.write("**Desenvolvedora:** Thais Lopes")
         
-    st.write(f"**Versão (Commit):** {last_commit_hash}")
-    st.write(f"**Última Atualização:** {last_commit_date}")
-    
+        try:
+            last_commit_date = subprocess.check_output(['git', 'log', '-1', '--format=%cd']).decode('utf-8').strip()
+            last_commit_hash = subprocess.check_output(['git', 'log', '-1', '--format=%h']).decode('utf-8').strip()
+        except Exception:
+            last_commit_date = "N/A"
+            last_commit_hash = "N/A"
+            
+        st.write(f"**Versão (Commit):** {last_commit_hash}")
+        st.write(f"**Última Atualização:** {last_commit_date}")
+        
+    with tab_changelog:
+        try:
+            import os
+            changelog_path = os.path.join(os.path.dirname(__file__), "CHANGELOG.md")
+            if os.path.exists(changelog_path):
+                with open(changelog_path, "r", encoding="utf-8") as f:
+                    st.markdown(f.read())
+            else:
+                st.info("Nenhum registro de mudança encontrado.")
+        except Exception as e:
+            st.error("Não foi possível carregar o Change Log.")
+            
+    st.markdown("<br>", unsafe_allow_html=True)
     if st.button("Fechar", use_container_width=True):
         st.rerun()
 
