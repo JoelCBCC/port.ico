@@ -125,9 +125,13 @@ def render_card(row, current_user_profile, user_email, read_only=False):
     svc_dict = get_services_dict()
 
     with st.container(border=True):
+        title_style = "margin:0; padding:0; color:#333;"
+        if current_user_profile in ["TI", "Copa"]:
+            title_style += " filter: blur(5px); user-select: none;"
+            
         st.markdown(f"""
         <div style='margin: -16px -16px 16px -16px; padding: 12px 16px; background-color: #ffecd9; border: 1px solid rgba(49, 51, 63, 0.2); border-radius: 8px 8px 0 0; box-sizing: border-box;'>
-            <h4 style='margin:0; padding:0; color:#333;'>📌 {row['title']}</h4>
+            <h4 style='{title_style}'>📌 {row['title']}</h4>
         </div>
         """, unsafe_allow_html=True)
         
