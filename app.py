@@ -33,7 +33,7 @@ def edit_service_modal(old_name, old_color):
 
 # Configuração da página
 st.set_page_config(
-    page_title="Sistema Kanban de Reuniões",
+    page_title="Port.Ico",
     page_icon="📅",
     layout="wide"
 )
@@ -131,7 +131,7 @@ def main():
     # Header
     col_logo, col_user = st.columns([8, 2])
     with col_logo:
-        st.title(f"📅 Kanban - Acessando como {user['profile']}")
+        st.title(f"📅 Port.Ico - Acessando como {user['profile']}")
     with col_user:
         st.write(f"Olá, **{user['name']}**")
         if st.button("Sair"):
@@ -140,9 +140,9 @@ def main():
     st.divider()
     
     if user['profile'] == 'Presidência':
-        tab_kanban, tab_done, tab_utils = st.tabs(["📊 Painel Kanban", "✅ Concluídos", "⚙️ Utilitários"])
+        tab_kanban, tab_done, tab_utils = st.tabs(["📊 Port.Ico", "✅ Concluídos", "⚙️ Utilitários"])
     else:
-        tab_kanban, tab_done = st.tabs(["📊 Painel Kanban", "✅ Concluídos"])
+        tab_kanban, tab_done = st.tabs(["📊 Port.Ico", "✅ Concluídos"])
         tab_utils = None
 
 

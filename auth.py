@@ -6,7 +6,7 @@ def login():
     
     with col2:
         st.markdown("<br><br>", unsafe_allow_html=True)
-        st.markdown("<h2 style='text-align: center;'>📅 Sistema Kanban</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='text-align: center;'>📅 Port.Ico</h2>", unsafe_allow_html=True)
         st.markdown("<p style='text-align: center; color: #666;'>Faça login para acessar</p>", unsafe_allow_html=True)
         
         with st.form("login_form"):

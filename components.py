@@ -258,7 +258,7 @@ def render_card(row, current_user_profile, user_email, read_only=False):
                     if st.button("💬", key=f"log_btn_{row['id']}", help="Ver Histórico"):
                         show_logs_modal(row['id'], row['title'])
                 with b1:
-                    if st.button("⏪", key=f"reopen_btn_{row['id']}", help="Reabrir Cartão (Voltar para o Kanban)"):
+                    if st.button("⏪", key=f"reopen_btn_{row['id']}", help="Reabrir Cartão (Voltar para o Port.Ico)"):
                         update_card(row['id'], {'status': 'active'}, user_email, "Reabertura")
                         st.rerun()
 
