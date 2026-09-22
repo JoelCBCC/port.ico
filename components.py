@@ -138,7 +138,10 @@ def render_card(row, current_user_profile, user_email, read_only=False):
         st.markdown(f"<div style='font-size: 0.85em; color: #555; margin-bottom: 5px;'>{datetime.datetime.fromisoformat(row['due_date']).strftime('%d/%m/%Y %H:%M')}</div>", unsafe_allow_html=True)
         
         if pd.notna(row.get('description')) and str(row['description']).strip():
-            st.markdown(f"<div style='font-size: 0.85em; color: #444; margin-bottom: 10px; font-style: italic;'>{row['description']}</div>", unsafe_allow_html=True)
+            desc_style = "font-size: 0.85em; color: #444; margin-bottom: 10px; font-style: italic;"
+            if current_user_profile == "TI":
+                desc_style += " filter: blur(5px); user-select: none;"
+            st.markdown(f"<div style='{desc_style}'>{row['description']}</div>", unsafe_allow_html=True)
         
         def badge(text, color):
             bg = {
@@ -239,7 +242,7 @@ def render_card(row, current_user_profile, user_email, read_only=False):
                 col_space, b_obs, b_log, b1, b2, b3 = st.columns([1.6, 1.2, 1.2, 1.2, 1.2, 1.2])
                 with b_obs:
                     if st.button("👁️", key=f"obs_btn_{row['id']}", help="Ver Observações"):
-                        show_observations_modal(row['title'], row.get('description', ''))
+                        show_observations_modal(row['title'], row.get('description', ''), current_user_profile)
                 with b_log:
                     if st.button("💬", key=f"log_btn_{row['id']}", help="Ver Histórico"):
                         show_logs_modal(row['id'], row['title'])
@@ -257,7 +260,7 @@ def render_card(row, current_user_profile, user_email, read_only=False):
                 col_space, b_obs, b_log, b1 = st.columns([4.0, 1.2, 1.2, 1.2])
                 with b_obs:
                     if st.button("👁️", key=f"obs_btn_{row['id']}", help="Ver Observações"):
-                        show_observations_modal(row['title'], row.get('description', ''))
+                        show_observations_modal(row['title'], row.get('description', ''), current_user_profile)
                 with b_log:
                     if st.button("💬", key=f"log_btn_{row['id']}", help="Ver Histórico"):
                         show_logs_modal(row['id'], row['title'])
@@ -267,10 +270,18 @@ def render_card(row, current_user_profile, user_email, read_only=False):
                         st.rerun()
 
 @st.dialog("Observações")
-def show_observations_modal(title, description):
-    st.write(f"Observações de: **{title}**")
+def show_observations_modal(title, description, current_user_profile):
+    title_style = ""
+    if current_user_profile == "TI":
+        title_style = "filter: blur(5px); user-select: none;"
+        
+    st.markdown(f"<p>Observações de: <strong style='{title_style}'>{title}</strong></p>", unsafe_allow_html=True)
+    
     if pd.notna(description) and str(description).strip():
-        st.info(description)
+        if current_user_profile == "TI":
+            st.markdown(f"<div style='padding: 1rem; border-radius: 0.5rem; background-color: #e8f4f8; color: #0c5460; filter: blur(5px); user-select: none;'>{description}</div>", unsafe_allow_html=True)
+        else:
+            st.info(description)
     else:
         st.warning("Nenhuma observação registrada para este agendamento.")
 
