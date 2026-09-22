@@ -1,11 +1,30 @@
 import streamlit as st
 import pandas as pd
+import subprocess
 from auth import check_auth, logout
 from database import get_visible_cards, get_directors, add_director, remove_director, update_director, get_rooms, add_room, remove_room, update_room, get_users, add_user, remove_user, get_services, add_service, remove_service, update_service, get_directors_dict, get_rooms_dict, get_services_dict
 from models import CATEGORIES
 from components import render_card, create_card_modal
 
 COLORS = ["green", "light_green", "purple", "lilac", "red", "brown", "blue", "yellow", "gray"]
+
+@st.dialog("Sobre o Port.Ico")
+def about_modal():
+    st.markdown("<h2 style='text-align: center;'>📅 Port.Ico</h2>", unsafe_allow_html=True)
+    st.write("**Desenvolvedora:** Thais Lopes")
+    
+    try:
+        last_commit_date = subprocess.check_output(['git', 'log', '-1', '--format=%cd']).decode('utf-8').strip()
+        last_commit_hash = subprocess.check_output(['git', 'log', '-1', '--format=%h']).decode('utf-8').strip()
+    except Exception:
+        last_commit_date = "N/A"
+        last_commit_hash = "N/A"
+        
+    st.write(f"**Versão (Commit):** {last_commit_hash}")
+    st.write(f"**Última Atualização:** {last_commit_date}")
+    
+    if st.button("Fechar", use_container_width=True):
+        st.rerun()
 
 @st.dialog("Editar Diretor")
 def edit_director_modal(old_name, old_color):
@@ -134,8 +153,13 @@ def main():
         st.title(f"📅 Port.Ico - Acessando como {user['profile']}")
     with col_user:
         st.write(f"Olá, **{user['name']}**")
-        if st.button("Sair"):
-            logout()
+        b1, b2 = st.columns(2)
+        with b1:
+            if st.button("Sobre"):
+                about_modal()
+        with b2:
+            if st.button("Sair"):
+                logout()
             
     st.divider()
     
