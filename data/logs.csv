@@ -1,0 +1,35 @@
+id,card_id,timestamp,user_email,action,details
+33166569-50e6-4114-9f51-c768ad68e660,4046172c-e61f-496a-9abb-b89a2d008009,2026-09-22T17:30:41.031576,presidencia@teste.com,Conclusão,Alterou Status de 'active' para 'concluido'
+5bada5d6-5364-45f0-8d5a-777fa8043238,4046172c-e61f-496a-9abb-b89a2d008009,2026-09-22T17:30:44.701376,presidencia@teste.com,Reabertura,Alterou Status de 'concluido' para 'active'
+5d5aafa0-df71-4007-949a-499cbf2b9aff,42f1a078-c58f-48fc-84ba-48bb03371216,2026-09-22T17:41:01.826514,presidencia@teste.com,Conclusão,Alterou Status de 'active' para 'concluido'
+95412e30-728a-4a33-88cc-a7890b21d275,42f1a078-c58f-48fc-84ba-48bb03371216,2026-09-22T17:41:13.328043,presidencia@teste.com,Reabertura,Alterou Status de 'concluido' para 'active'
+a28e866d-02e9-43b4-b60c-ddfa467695a0,228d120a-ae9c-468e-ae0a-0f14669fdb02,2026-09-22T17:51:20.160302,presidencia@teste.com,Conclusão,Alterou Status de 'active' para 'concluido'
+3a6f2053-e85b-41c3-b1ec-16b076c6c66f,42f1a078-c58f-48fc-84ba-48bb03371216,2026-09-22T17:51:27.387756,presidencia@teste.com,Conclusão,Alterou Status de 'active' para 'concluido'
+2ea228dc-d8cc-4161-baf1-cdca1b21d83d,a4232aca-2229-4ecb-ab8d-fc3a62f5f535,2026-09-22T17:51:29.278482,presidencia@teste.com,Conclusão,Alterou Status de 'active' para 'concluido'
+aaf923c5-9f37-48d2-a1d4-9c018cc86e81,323bcf96-91e1-40a4-9a8b-49e161df0fed,2026-09-22T17:51:46.607883,presidencia@teste.com,Conclusão,Alterou Status de 'active' para 'concluido'
+70360e0c-d381-4f31-a263-cd2a918ea257,bdffcf7d-6d2a-48c1-ae31-e85e4ea98b65,2026-09-22T17:51:47.546195,presidencia@teste.com,Conclusão,Alterou Status de 'active' para 'concluido'
+9eb26025-b7c4-41dd-b070-a384670fd246,4046172c-e61f-496a-9abb-b89a2d008009,2026-09-22T17:51:56.465375,presidencia@teste.com,Conclusão,Alterou Status de 'active' para 'concluido'
+46754870-3003-4477-8ad9-74d09530a335,7c19ead5-f1d3-4005-85bc-0efd14e0b724,2026-09-22T17:52:08.995677,presidencia@teste.com,Edição,Edição
+2fd0362c-c4a8-4a2a-9563-a209ac598d56,1821b6e3-d49c-447e-b10a-bd331678f919,2026-09-22T17:54:55.602359,presidencia@teste.com,Criação,Criou o agendamento 'Melissa'.
+8423e2cc-2afb-4a14-96d6-bf502a670252,1821b6e3-d49c-447e-b10a-bd331678f919,2026-09-22T17:57:15.858022,presidencia@teste.com,Edição,Alterou Suporte TI de 'True' para 'False'
+08196361-bdb6-40cc-b66b-3f75deedd980,1821b6e3-d49c-447e-b10a-bd331678f919,2026-09-22T18:09:32.770628,presidencia@teste.com,Edição,Alterou Suporte TI de 'False' para 'True'
+16c61381-57a3-41c8-9e92-3e1184380f3f,7c19ead5-f1d3-4005-85bc-0efd14e0b724,2026-09-22T18:09:37.702101,presidencia@teste.com,Conclusão,Alterou Status de 'active' para 'concluido'
+402ba502-2efb-460a-959b-615ed7690095,1821b6e3-d49c-447e-b10a-bd331678f919,2026-09-22T18:13:46.177444,presidencia@teste.com,Edição,Alterou Título de 'Melissa' para 'Melissa Lopes'
+2f1907f6-0a90-4c67-97cf-900e73237c55,2d4aca84-0a8b-4d32-a946-80607662100d,2026-09-22T18:15:08.203103,presidencia@teste.com,Edição,Alterou Título de 'evento' para 'Joel Lopes'
+f47ea67c-f193-4332-b9ed-4ee0eae826b5,0599e38d-697e-4b19-bce1-5f6670624199,2026-09-22T18:15:58.872376,presidencia@teste.com,Criação,Criou o agendamento 'Thais Lopes'.
+1ccf54b8-4c28-49f0-896a-33b811ada73a,9d6c2547-049d-4a5a-afd9-09d38c82a017,2026-09-22T18:16:23.452567,presidencia@teste.com,Criação,Criou o agendamento 'Entrega Minas Paraná '.
+07025208-8659-4875-af9e-ecfadfc81cb3,9d6c2547-049d-4a5a-afd9-09d38c82a017,2026-09-22T18:17:16.638219,presidencia@teste.com,Edição,Alterou Suporte TI de 'True' para 'False'
+48325414-4fa8-407e-8a1a-1e59e8c5eba0,9cf033f8-ce22-46a6-9fe4-2d2dfb4cc590,2026-09-22T18:17:31.550956,presidencia@teste.com,Criação,Criou o agendamento 'Aaaaa pilha palito'.
+0c3bd5a5-77d7-4a6e-872c-99ae918d6ff5,9cf033f8-ce22-46a6-9fe4-2d2dfb4cc590,2026-09-22T18:17:56.824112,presidencia@teste.com,Movimentação,Alterou Categoria de 'interna' para 'externa'
+97e6b4f4-49c0-4421-b324-aa2ac22c612c,9d6c2547-049d-4a5a-afd9-09d38c82a017,2026-09-22T18:18:30.809214,presidencia@teste.com,Edição,Alterou Suporte TI de 'False' para 'True'
+5b7277d8-1256-4ee8-8e66-c2716d69a2eb,9d6c2547-049d-4a5a-afd9-09d38c82a017,2026-09-22T18:18:59.854000,presidencia@teste.com,Edição,Alterou Data/Hora de '2026-09-22T13:30:00' para '2026-09-26T13:30:00'
+fa4870b3-8a2f-4c0d-9061-428a334a30e9,2d4aca84-0a8b-4d32-a946-80607662100d,2026-09-22T18:19:22.898265,presidencia@teste.com,Edição,Alterou Suporte TI de 'True' para 'False'
+5415a8c7-2f4f-4e31-8cdc-794bae7c0e7e,bdffcf7d-6d2a-48c1-ae31-e85e4ea98b65,2026-09-22T18:24:30.045705,presidencia@teste.com,Reabertura,Alterou Status de 'concluido' para 'active'
+d744b290-319c-425f-bb05-59a367b7b6bd,7c19ead5-f1d3-4005-85bc-0efd14e0b724,2026-09-22T18:24:33.926276,presidencia@teste.com,Reabertura,Alterou Status de 'concluido' para 'active'
+9a6239ff-6234-4b83-8c19-0140e227a3e9,228d120a-ae9c-468e-ae0a-0f14669fdb02,2026-09-22T18:24:35.298458,presidencia@teste.com,Reabertura,Alterou Status de 'concluido' para 'active'
+24c35190-c8f0-4c30-85f3-f333132a3ed9,323bcf96-91e1-40a4-9a8b-49e161df0fed,2026-09-22T18:24:36.663277,presidencia@teste.com,Reabertura,Alterou Status de 'concluido' para 'active'
+c695c60b-dba4-49f7-ae28-aaec943d869d,1821b6e3-d49c-447e-b10a-bd331678f919,2026-09-22T18:25:16.208569,presidencia@teste.com,Edição,Alterou Título de 'Melissa Lopes' para 'AA'
+14b888bf-eb4b-4689-b8f6-9f9f9283d513,0599e38d-697e-4b19-bce1-5f6670624199,2026-09-22T18:25:27.242025,presidencia@teste.com,Edição,Alterou Título de 'Thais Lopes' para 'B'
+c3d492aa-de23-48fb-b464-5cae5c726bd5,2d4aca84-0a8b-4d32-a946-80607662100d,2026-09-22T18:25:38.952456,presidencia@teste.com,Edição,Alterou Título de 'Joel Lopes' para 'C'
+9ebe8d2a-cca1-493f-87dc-05a90f3e5747,1821b6e3-d49c-447e-b10a-bd331678f919,2026-09-22T18:32:38.363563,presidencia@teste.com,Movimentação,Alterou Categoria de 'interna' para 'externa'
+a7747625-6e60-430e-9a23-f28e9a917bf7,1821b6e3-d49c-447e-b10a-bd331678f919,2026-09-22T18:33:50.035478,presidencia@teste.com,Edição,Alterou Suporte TI de 'True' para 'False'
