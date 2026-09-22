@@ -1,3 +1,25 @@
+# 🚀 Walkthrough: Auto-Refresh, Sigilo e Change Log
+
+Mais um pacote de funcionalidades implantadas no Port.Ico focadas na experiência em nuvem e na segurança da informação!
+
+## O que mudou?
+
+### 1. 🔄 Atualização em Tempo Real (Invisível)
+Diferente das estratégias tradicionais que atualizam a página inteira, implantamos a nova tecnologia de Fragmentos do Streamlit. 
+A cada 10 segundos, o miolo do seu painel consulta os dados mais recentes na nuvem, enquanto todo o restante da tela (menus, cabeçalho e janelas abertas) fica completamente intacto e congelado. O resultado? O painel está sempre atualizado de forma silenciosa, sem jamais fechar a sua janela na sua cara!
+
+### 2. 🛡️ Sigilo de Reuniões (Filtro Blur)
+Como os perfis **TI** e **Copa** são focados apenas no apoio operacional (equipamentos e alimentação), eles não precisam saber o assunto estratégico da reunião.
+- A partir de agora, se alguém desses dois perfis logar no sistema, o Título (Nome do Cartão) aparecerá completamente borrado na interface, sendo impossível de ler e bloqueado contra 'Copiar e Colar'.
+
+### 3. ℹ️ Nova Tela 'Sobre' & Histórico
+Para consolidar o controle de versões, o sistema ganhou uma central administrativa ao lado do botão de Sair:
+- **Sobre:** Créditos de desenvolvimento e um robô inteligente que lê nativamente a base do Git para cravar com exatidão a versão do código e o último instante de atualização.
+- **Change Log:** Um documento vivo embutido no painel para que a equipe sempre possa ler quais foram as últimas inovações liberadas!
+
+
+---
+
 # Novo Recurso: Histórico de Auditoria (Logs) 📜
 
 A infraestrutura do seu Kanban foi expandida para incluir um sistema rigoroso de rastreio de ações. Nenhuma modificação nos agendamentos passa despercebida agora.
