@@ -2,7 +2,7 @@ import streamlit as st
 import datetime
 import pandas as pd
 from models import CATEGORIES
-from database import create_card, update_card, get_directors, get_rooms, get_services, get_directors_dict, get_rooms_dict, get_services_dict, delete_card, get_logs
+from database import create_card, update_card, get_directors, get_rooms, get_services, get_directors_dict, get_rooms_dict, get_services_dict, delete_card, get_logs, get_users
 
 @st.dialog("Novo Agendamento")
 def create_card_modal(user_email, user_profile, initial_category="interna"):
@@ -198,6 +198,11 @@ def render_card(row, current_user_profile, user_email, read_only=False):
                 
         if badges:
             st.markdown("<div style='margin-bottom: 10px;'>" + "".join(badges) + "</div>", unsafe_allow_html=True)
+            
+        users_df = get_users()
+        creator_name = users_df[users_df['email'] == row.get('created_by')]['name'].values
+        creator_name = creator_name[0] if len(creator_name) > 0 else row.get('created_by', "Desconhecido")
+        st.markdown(f"<div style='font-size: 0.75em; color: #a0a0a0; text-align: right; margin-bottom: 2px; margin-top: 5px;'>Criado por: {creator_name}</div>", unsafe_allow_html=True)
             
         if current_user_profile in ["Presidência", "Pool"]:
             st.markdown("<hr style='margin: 10px 0; border: 0; border-top: 1px solid #eeeeee;'>", unsafe_allow_html=True)
