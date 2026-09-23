@@ -239,32 +239,24 @@ def render_card(row, current_user_profile, user_email, read_only=False):
             """, unsafe_allow_html=True)
             
             if not read_only:
-                col_space, b_obs, b_log, b1, b2, b3 = st.columns([1.6, 1.2, 1.2, 1.2, 1.2, 1.2])
-                with b_obs:
+                with st.container(horizontal=True, horizontal_alignment="right", gap="xsmall"):
                     if st.button("👁️", key=f"obs_btn_{row['id']}", help="Ver Observações"):
                         show_observations_modal(row['title'], row.get('description', ''), current_user_profile)
-                with b_log:
                     if st.button("💬", key=f"log_btn_{row['id']}", help="Ver Histórico"):
                         show_logs_modal(row['id'], row['title'])
-                with b1:
                     if st.button("✅", key=f"done_btn_{row['id']}", help="Concluir Cartão"):
                         update_card(row['id'], {'status': 'concluido'}, user_email, "Conclusão")
                         st.rerun()
-                with b2:
                     if st.button("✏️", key=f"edit_btn_{row['id']}", help="Editar Cartão"):
                         edit_card_modal(row, user_email)
-                with b3:
                     if st.button("➡️", key=f"move_btn2_{row['id']}", help="Mover Cartão"):
                         move_card_modal(row['id'], row['category'], user_email)
             else:
-                col_space, b_obs, b_log, b1 = st.columns([4.0, 1.2, 1.2, 1.2])
-                with b_obs:
+                with st.container(horizontal=True, horizontal_alignment="right", gap="xsmall"):
                     if st.button("👁️", key=f"obs_btn_{row['id']}", help="Ver Observações"):
                         show_observations_modal(row['title'], row.get('description', ''), current_user_profile)
-                with b_log:
                     if st.button("💬", key=f"log_btn_{row['id']}", help="Ver Histórico"):
                         show_logs_modal(row['id'], row['title'])
-                with b1:
                     if st.button("⏪", key=f"reopen_btn_{row['id']}", help="Reabrir Cartão (Voltar para o Port.Ico)"):
                         update_card(row['id'], {'status': 'active'}, user_email, "Reabertura")
                         st.rerun()

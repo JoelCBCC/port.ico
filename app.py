@@ -168,12 +168,10 @@ def main():
     with col_logo:
         st.title(f"📅 Port.Ico - Acessando como {user['profile']}")
     with col_user:
-        st.write(f"Olá, **{user['name']}**")
-        b1, b2 = st.columns(2)
-        with b1:
+        st.markdown(f"<div style='text-align: right;'>Olá, **{user['name']}**</div>", unsafe_allow_html=True)
+        with st.container(horizontal=True, horizontal_alignment="right", gap="xsmall"):
             if st.button("Sobre"):
                 about_modal()
-        with b2:
             if st.button("Sair"):
                 logout()
             
