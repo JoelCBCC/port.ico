@@ -85,7 +85,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-@st.fragment(run_every=10)
+@st.fragment()
 def render_kanban_board(user):
     # Adicionar cartão
     if user['profile'] in ['Presidência', 'Pool']:
@@ -139,7 +139,7 @@ def render_kanban_board(user):
         else:
             st.write("*Vazio*")
 
-@st.fragment(run_every=10)
+@st.fragment()
 def render_done_board(user):
     st.header("✅ Cartões Concluídos")
     st.write("Abaixo estão os cartões finalizados e arquivados do painel principal.")
