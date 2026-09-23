@@ -197,6 +197,7 @@ def main():
             with st.expander("Mini Dashboard", expanded=True):
                 st.write("Visão Geral de Métricas do Sistema")
                 
+                df_all = get_visible_cards(user['profile'], user['email'])
                 users_df = get_users()
                 if not df_all.empty and not users_df.empty:
                     df_dash = df_all.merge(users_df[['email', 'profile']], left_on='created_by', right_on='email', how='left')
