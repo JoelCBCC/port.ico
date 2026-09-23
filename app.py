@@ -194,6 +194,48 @@ def main():
         with tab_utils:
             st.header("⚙️ Configurações e Utilitários")
             
+            with st.expander("Mini Dashboard", expanded=True):
+                st.write("Visão Geral de Métricas do Sistema")
+                
+                users_df = get_users()
+                if not df_all.empty and not users_df.empty:
+                    df_dash = df_all.merge(users_df[['email', 'profile']], left_on='created_by', right_on='email', how='left')
+                    df_dash['profile'] = df_dash['profile'].fillna('Desconhecido')
+                    
+                    total_cards = len(df_dash)
+                    open_cards = len(df_dash[df_dash['status'] != 'concluido'])
+                    cards_by_profile = df_dash['profile'].value_counts()
+                    
+                    df_dash['people_num'] = df_dash['people_count'].astype(str).str.extract(r'(\d+)').astype(float).fillna(0)
+                    total_people = df_dash['people_num'].sum()
+                    open_people = df_dash[df_dash['status'] != 'concluido']['people_num'].sum()
+                    people_by_profile = df_dash.groupby('profile')['people_num'].sum().sort_values(ascending=False)
+                    
+                    dash_col1, dash_col2 = st.columns(2)
+                    
+                    with dash_col1:
+                        st.subheader("📊 Cartões")
+                        c1, c2 = st.columns(2)
+                        c1.metric("Abertos", f"{open_cards}")
+                        c2.metric("Total", f"{total_cards}")
+                        
+                        st.markdown("<div style='font-size: 0.85em; color: #555; margin-top: 10px;'><strong>Total por Perfil:</strong></div>", unsafe_allow_html=True)
+                        for prof, count in cards_by_profile.items():
+                            st.markdown(f"<div style='font-size: 0.8em; color: #666;'>- {prof}: {count}</div>", unsafe_allow_html=True)
+                            
+                    with dash_col2:
+                        st.subheader("👥 Qtd Pessoas")
+                        c1, c2 = st.columns(2)
+                        c1.metric("Abertas", f"{int(open_people)}")
+                        c2.metric("Total", f"{int(total_people)}")
+                        
+                        st.markdown("<div style='font-size: 0.85em; color: #555; margin-top: 10px;'><strong>Total por Perfil:</strong></div>", unsafe_allow_html=True)
+                        for prof, count in people_by_profile.items():
+                            if count > 0:
+                                st.markdown(f"<div style='font-size: 0.8em; color: #666;'>- {prof}: {int(count)}</div>", unsafe_allow_html=True)
+                else:
+                    st.info("Não há dados suficientes para gerar o dashboard.")
+            
             with st.expander("Manutenção de Diretores"):
                 st.write("Gerencie as opções que aparecem na lista de Diretores.")
                 d_col1, d_col2, d_col3 = st.columns(3)
